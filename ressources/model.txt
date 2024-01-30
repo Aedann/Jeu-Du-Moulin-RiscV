@@ -1,0 +1,102 @@
+
+Plateau vide :
+
+#-----------#-----------#
+|           |           |
+|   #-------#-------#   |
+|   |       |       |   |
+|   |   #---#---#   |   |
+|   |   |       |   |   |
+#---#---#       #---#---#
+|   |   |       |   |   |
+|   |   #---#---#   |   |
+|   |       |       |   |
+|   #-------#-------#   |
+|           |           |
+#-----------#-----------#
+
+Plateau semi rempli:
+
+O-----------O-----------X
+|           |           |
+|   O-------X-------X   |
+|   |       |       |   |
+|   |   #---O---X   |   |
+|   |   |       |   |   |
+#---X---#       X---#---#
+|   |   |       |   |   |
+|   |   O---#---O   |   |
+|   |       |       |   |
+|   #-------#-------#   |
+|           |           |
+#-----------#-----------#
+
+Fonctionnement du jeu pour l'utilisateur pour les entrées/sorties:
+
+- sorties :
+	- Le jeu affiche le plateau ci dessus ainsi que un plateau à droite avec les numéros des cases
+	- Le jeu écrit des informations tel que le tour du joueur, si les entrées fournies ne sont pas disponibles...
+
+- entrées :
+	- Toute interaction se fait en donnant le numéro de la case qui nous intéresse
+
+
+On utilise un tableau de cases, les indices correspondant sont :
+                         
+0-----------1-----------2
+|           |           |
+|   3-------4-------5   |
+|   |       |       |   |
+|   |   6---7---8   |   |
+|   |   |       |   |   |
+9---10--11      12--13--14
+|   |   |       |   |   |
+|   |   15--16--17  |   |
+|   |       |       |   |
+|   18------19------20  |
+|           |           |
+21----------22----------23
+
+
+
+Structures :
+
+Cases : possède une valeur, une valeur Ascii associée au symbole correspondant, les 4 voisins potentiels
+
+valeurs possibles des cases :
+
+0 : case vide
+1 : case du joueur 1
+2 : case du joueur 2
+
+symboles des cases :
+
+# : case vide	(valeur ascii = 35)
+O : case du joueur 1	(valeur ascii = 79)
+X : case du joueur 2	(valeur ascii = 88)
+
+les valeurs des voisins correspondent au indices dans le tableau ci dessus
+
+
+
+Fonctions :
+
+affiche_plateau() : affiche le plateau actuel de jeu ainsi que un plateau d'indication des indices à droite
+
+initialisation() : initialise les valeurs du tableau correspondant au plateau (valeurs à 0 ; symbole à # ; voisins correspondants pour chaque cases individuellement)
+
+test_moulin() : teste si la case correspondant à l'indice en paramètre forme un/des moulin(s).
+elle renvoie un tableau de 8 booléens correspondant aux 8 manières possibles pour une case d'appartenir à un moulin.
+
+ALTERNATIVEMENT : on pourrait renvoyer juste un booléen mais la fonction est codée de cette manière pour l'instant au cas où on aurait besoin de plus qu'un booléen par la suite
+
+On retourne le résultat sous cette manière pour pouvoir avoir facilement accès au différents moulins dont un pion fait partie si on a besoin. 
+
+
+fonctions à faire :
+
+Aucune ne parait évidente pour l'instant,
+La plupart du code qu'il reste à faire se trouve dans le main() vu qu'il s'agit de détails plus spécifiques de la gestion du jeu qui ne requierent pas forcément de fonctions (à part peut-être pour compartimenter le code du main() pour le rendre plus lisible).
+
+
+
